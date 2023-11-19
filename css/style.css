@@ -1,0 +1,101 @@
+:root {
+    --font-family-base: 'Century Gothic', sans-serif;
+
+    --font-size-main: 22px;
+
+    --color-main: #fff;
+
+    --color-bg-menu: #333333;
+    --color-bg-menu-acccent: #009EFF;
+    --color-border-menu: #0084EF;
+
+    --container--width: 1200px;
+    --container-padding-x: 15px;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../fonts/CenturyGothic.eot');
+    src: local('../fonts/Century Gothic'), local('CenturyGothic'),
+    url('../fonts/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/CenturyGothic.woff') format('woff'),
+    url('../fonts/CenturyGothic.woff2') format('woff2');
+    url('../fonts/CenturyGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--color-main);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-main);
+}
+
+.container {
+    max-width: var(--container--width);
+    padding: 0 var(--container-padding-x);
+}
+
+header {
+    background-color: var(--color-bg-menu);
+    border-bottom: 5px solid var(--color-bg-menu-acccent);
+}
+
+.menu__top {
+    display: flex;
+    background-color: var(--color-bg-menu);
+    color: var(--color-main);
+}
+
+
+
+.menu__top a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-main);
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.menu__top a:hover {
+    background-color: var(--color-bg-menu-acccent);
+}
+
+.menu__sub {
+    min-width: 230px;
+    position: absolute;
+    z-index: 2;
+    transform-origin: 0 0;
+    transform: rotateX(-90deg);
+    transition: .3s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu__sub li {
+    position: relative;
+}
+
+.menu__sub .menu__sub {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: .3s linear;
+}
+
+.menu__top li:hover > .menu__sub {
+    transform: rotateX(0deg);
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__sub a{
+    border: 1px solid var(--color-border-menu);
+    padding: 15px 80px 15px 15px;
+    background-color: var(--color-bg-menu-acccent);
+    display: block;
+    text-transform: none;
+}
+
+
+
